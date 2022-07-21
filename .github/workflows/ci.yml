@@ -8,13 +8,21 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
+            - name: Use Node.js
+              uses: actions/setup-node@v3
             - name: Install dependencies
-              run: npm install
+              run: npm ci
+
+        # steps:
+        #     - uses: actions/checkout@v3
+
+        #     - name: Install dependencies
+        #       run: npm install
 
             - name: Build
               run: npm run build
 
-            - uses: actions/setup-node@v2
-            - name: Test
-              run: npm test
-              run: npm run format
+            # - uses: actions/setup-node@v2
+            # - name: Test
+            #   run: npm test
+            #   run: npm run format
